@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Define a structure for BST nodes
 struct Node {
     int key;
     struct Node *left, *right;
@@ -89,7 +88,6 @@ int getLevelUtil(struct Node *node, int key, int level) {
     return downlevel;
 }
 
-// Returns level of given data value
 int getLevel(struct Node *node, int key) {
     return getLevelUtil(node, key, 1);
 }
@@ -101,7 +99,6 @@ int main() {
     int n = sizeof(array)/sizeof(array[0]);
     int keyToDelete;
 
-    // Construct the BST
     for (int i = 0; i < n; i++)
         root = insert(root, array[i]);
 
@@ -109,7 +106,6 @@ int main() {
     printf("Enter the node key you want to delete: ");
     scanf("%d", &keyToDelete);
 
-    // Delete the node
     root = deleteNode(root, keyToDelete);
 
     // Print the height of the BST
